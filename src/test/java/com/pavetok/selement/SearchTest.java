@@ -1,6 +1,7 @@
 package com.pavetok.selement;
 
 import com.pavetok.selement.actors.User;
+import com.pavetok.selement.domain.Result;
 import com.pavetok.selement.pages.ResultPage;
 import com.pavetok.selement.pages.MainPage;
 import org.junit.BeforeClass;
@@ -30,6 +31,10 @@ public class SearchTest {
     public void searchShouldWork() throws Exception {
         // given
         User user = new User();
+        Result result = new Result(
+                "Selenide: лаконичные UI тесты на Java",
+                "позволяет писать лаконичные тесты"
+        );
         // when
         user.opens(mainPage);
         // then
@@ -38,5 +43,6 @@ public class SearchTest {
         user.search("selenide");
         // then
         user.shouldSee(resultPage);
+        resultPage.resultList.shouldContain(result);
     }
 }
