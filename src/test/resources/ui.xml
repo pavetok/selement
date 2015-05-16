@@ -6,10 +6,10 @@
 
        <!--main page-->
        <bean class="com.pavetok.selement.pages.MainPage" />
-       <bean class="com.pavetok.selement.elements.MailForm" />
+       <bean class="com.pavetok.selement.elements.SearchForm" />
 
        <!--mail page-->
-       <bean class="com.pavetok.selement.pages.MailPage" />
-       <bean class="com.pavetok.selement.elements.MailLogo" />
+       <bean class="com.pavetok.selement.pages.ResultPage" />
+       <bean class="com.pavetok.selement.elements.ResultList" />
 
 </beans>

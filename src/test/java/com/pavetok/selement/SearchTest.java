@@ -1,7 +1,7 @@
 package com.pavetok.selement;
 
 import com.pavetok.selement.actors.User;
-import com.pavetok.selement.pages.MailPage;
+import com.pavetok.selement.pages.ResultPage;
 import com.pavetok.selement.pages.MainPage;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -14,20 +14,20 @@ import static com.codeborne.selenide.Selenide.open;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration({"/ui.xml"})
-public class MainPageTest {
+public class SearchTest {
 
     @Autowired
     MainPage mainPage;
     @Autowired
-    MailPage mailPage;
+    ResultPage resultPage;
 
     @BeforeClass
     public static void suiteSetup() {
-        open("http://www.yandex.ru");
+        open("http://www.google.com");
     }
 
     @Test
-    public void yandexLoginTest() throws Exception {
+    public void searchShouldWork() throws Exception {
         // given
         User user = new User();
         // when
@@ -35,8 +35,8 @@ public class MainPageTest {
         // then
         user.shouldSee(mainPage);
         // when
-        user.login();
+        user.search("selenide");
         // then
-        user.shouldSee(mailPage);
+        user.shouldSee(resultPage);
     }
 }
