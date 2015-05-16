@@ -6,7 +6,7 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 @Retention(RetentionPolicy.RUNTIME)
-@Target({ElementType.METHOD})  // TODO: attribute annotation?
+@Target({ElementType.FIELD})
 public @interface Child {
     // default
 }

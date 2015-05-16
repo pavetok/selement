@@ -27,7 +27,7 @@ public class MainPageTest {
     }
 
     @Test
-    public void YandexLoginTest() throws Exception {
+    public void yandexLoginTest() throws Exception {
         // given
         User user = new User();
         // when
@@ -39,5 +39,4 @@ public class MainPageTest {
         // then
         user.shouldSee(mailPage);
     }
-
 }

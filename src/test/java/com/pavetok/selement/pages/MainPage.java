@@ -6,16 +6,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 public class MainPage extends BasePage {
 
+    @Child
     @Autowired
-    private MailForm mailForm;
+    public MailForm mailForm;
 
     @Override
     protected String url() {
         return "http://www.yandex.ru";
-    }
-
-    @Child
-    public MailForm mailForm() {
-        return mailForm;
     }
 }

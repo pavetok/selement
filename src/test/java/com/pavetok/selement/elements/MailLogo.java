@@ -1,11 +1,12 @@
 package com.pavetok.selement.elements;
 
 import com.pavetok.selement.Selement;
+import org.openqa.selenium.By;
 
 public class MailLogo extends Selement {
 
     @Override
-    protected String locator() {
-        return "//span[@class='b-stamp__mail__text']";
+    protected By locator() {
+        return By.className("b-stamp__mail__text");
     }
 }

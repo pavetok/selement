@@ -6,16 +6,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 public class MailPage extends BasePage {
 
+    @Child
     @Autowired
     private MailLogo mailLogo;
 
     @Override
     protected String url() {
         return "https://mail.yandex.ru";
-    }
-
-    @Child
-    public MailLogo mailLogo() {
-        return mailLogo;
     }
 }

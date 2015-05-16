@@ -10,8 +10,8 @@ import static com.codeborne.selenide.Selenide.$;
 public class MailForm extends Selement {
 
     @Override
-    protected String locator() {
-        return "//div[@class='b-topbar__domik']";
+    protected By locator() {
+        return By.className("b-topbar__domik");
     }
 
     @Override
