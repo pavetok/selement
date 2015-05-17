@@ -3,7 +3,6 @@ package com.pavetok.selement.elements;
 import com.codeborne.selenide.SelenideElement;
 import com.pavetok.selement.Selement;
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$;
@@ -23,7 +22,7 @@ public class SearchForm extends Selement {
 
     public void search(String query) {
         queryInput().setValue(query);
-        queryInput().sendKeys(Keys.ENTER);
+        queryInput().pressEnter();
     }
 
     private SelenideElement queryInput() {
