@@ -4,6 +4,10 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
        http://www.springframework.org/schema/beans/spring-beans.xsd">
 
+       <!--actors-->
+       <bean class="com.pavetok.selement.actors.Browser" />
+       <bean class="com.pavetok.selement.actors.User" />
+
        <!--main page-->
        <bean class="com.pavetok.selement.pages.MainPage" />
        <bean class="com.pavetok.selement.elements.SearchForm" />

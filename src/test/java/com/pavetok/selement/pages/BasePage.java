@@ -16,7 +16,7 @@ abstract public class BasePage extends Selement {
     }
 
     @Override
-    protected void presented() {
+    protected void visible() {
         assertThat(url(), containsString(this.url()));
     }
 }

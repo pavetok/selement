@@ -2,16 +2,17 @@ package com.pavetok.selement.elements;
 
 import com.codeborne.selenide.SelenideElement;
 import com.pavetok.selement.Selement;
-import com.pavetok.selement.domain.Result;
 import org.openqa.selenium.By;
 
 import static com.codeborne.selenide.Condition.visible;
 
-public class ResultUI extends Selement {
-    private Result domainResult;
+public class Result extends Selement {
+    private String linkText;
+    private String description;
 
-    public ResultUI(Result domainResult) {
-        this.domainResult = domainResult;
+    public Result(String linkText, String description) {
+        this.linkText = linkText;
+        this.description = description;
     }
 
     @Override
@@ -20,19 +21,19 @@ public class ResultUI extends Selement {
     }
 
     @Override
-    protected void presented() {
-        super.presented();
+    protected void visible() {
+        super.visible();
         this.link().shouldBe(visible);
         this.description().shouldBe(visible);
     }
 
     private SelenideElement link() {
-        String locator = String.format("//a[text()='%s']", domainResult.linkText());
+        String locator = String.format("//a[text()='%s']", linkText);
         return self().$(By.xpath(locator));
     }
 
     private SelenideElement description() {
-        String locator = String.format("//span[contains(text(), '%s')]", domainResult.description());
+        String locator = String.format("//span[contains(text(), '%s')]", description);
         return self().$(By.xpath(locator));
     }
 }

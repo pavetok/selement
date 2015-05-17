@@ -16,8 +16,8 @@ public class SearchForm extends Selement {
     }
 
     @Override
-    protected void presented() {
-        super.presented();
+    protected void visible() {
+        super.visible();
         queryInput().shouldBe(visible);
     }
 

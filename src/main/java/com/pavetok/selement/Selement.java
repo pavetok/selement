@@ -18,16 +18,16 @@ abstract public class Selement {
         return $(this.locator());
     }
 
-    public void shouldBePresented() throws InvocationTargetException, IllegalAccessException {
-        this.presented();
+    public void shouldBeVisible() throws InvocationTargetException, IllegalAccessException {
+        this.visible();
         for (Selement child : children()) {
-            child.shouldBePresented();
+            child.shouldBeVisible();
         }
     }
 
     protected abstract By locator();
 
-    protected void presented() {
+    protected void visible() {
         self().shouldBe(visible);
     }
 
