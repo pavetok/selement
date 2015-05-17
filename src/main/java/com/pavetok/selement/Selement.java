@@ -9,8 +9,8 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.List;
 
-import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Condition.visible;
+import static com.codeborne.selenide.Selenide.$;
 
 abstract public class Selement {
 
@@ -38,7 +38,7 @@ abstract public class Selement {
         for (Field field : elementClass.getDeclaredFields()) {
             for (Annotation annotation : field.getDeclaredAnnotations()) {
                 if (annotation instanceof Child) {
-                    selements.add((Selement)field.get(this));
+                    selements.add((Selement) field.get(this));
                 }
             }
         }

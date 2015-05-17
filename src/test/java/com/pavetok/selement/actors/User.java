@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 public class User {
 
     @Autowired
-    Browser browser;
+    private Browser browser;
 
     public void opens(BasePage page) throws Exception {
         browser.opens(page);
@@ -19,8 +19,14 @@ public class User {
         element.shouldBeVisible();
     }
 
-    public void search(String query) {
-        MainPage mainPage = (MainPage)browser.currentPage; // TODO: is it ugly?
+    public void shouldSee(Selement... elements) throws Exception {
+        for (Selement element : elements) {
+            shouldSee(element);
+        }
+    }
+
+    public void searches(String query) {
+        MainPage mainPage = (MainPage) browser.currentPage; // TODO: is this ugly?
         mainPage.searchForm.search(query);
     }
 }
