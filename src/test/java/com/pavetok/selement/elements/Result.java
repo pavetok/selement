@@ -4,9 +4,9 @@ import com.codeborne.selenide.SelenideElement;
 import com.pavetok.selement.Selement;
 import org.openqa.selenium.By;
 
+import static com.codeborne.selenide.Condition.exactText;
+import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Condition.visible;
-import static com.codeborne.selenide.Selectors.byText;
-import static com.codeborne.selenide.Selectors.withText;
 
 public class Result extends Selement {
     private final int position;
@@ -27,15 +27,15 @@ public class Result extends Selement {
     @Override
     protected void visible() {
         self(position).shouldBe(visible);
-        link().shouldBe(visible);
-        description().shouldBe(visible);
+        link().shouldBe(visible).shouldHave(exactText(linkText));
+        description().shouldBe(visible).shouldHave(text(description));
     }
 
     private SelenideElement link() {
-        return self(position).$(byText(linkText));
+        return self(position).$(By.tagName("a"));
     }
 
     private SelenideElement description() {
-        return self(position).$(withText(description));
+        return self(position).$(By.className("st"));
     }
 }
