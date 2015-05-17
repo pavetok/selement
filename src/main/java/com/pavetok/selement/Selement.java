@@ -13,7 +13,6 @@ import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$;
 
 abstract public class Selement {
-
     public SelenideElement self() {
         return $(this.locator());
     }

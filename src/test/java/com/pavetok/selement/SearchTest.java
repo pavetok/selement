@@ -43,6 +43,8 @@ public class SearchTest {
         // then
         browser.opens(resultPage);
         // and
+        resultPage.resultList().shouldHaveSize(10);
+        // and
         user.shouldSee(result1, result2);
     }
 }

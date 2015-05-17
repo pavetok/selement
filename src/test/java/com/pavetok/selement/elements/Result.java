@@ -26,9 +26,9 @@ public class Result extends Selement {
 
     @Override
     protected void visible() {
-        super.visible();
-        this.link().shouldBe(visible);
-        this.description().shouldBe(visible);
+        self(position).shouldBe(visible);
+        link().shouldBe(visible);
+        description().shouldBe(visible);
     }
 
     private SelenideElement link() {

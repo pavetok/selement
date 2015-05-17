@@ -8,7 +8,6 @@ import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$;
 
 public class SearchForm extends Selement {
-
     @Override
     protected By locator() {
         return By.className("tsf-p");

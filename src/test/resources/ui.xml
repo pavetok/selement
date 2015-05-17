@@ -14,6 +14,5 @@
 
     <!--mail page-->
     <bean class="com.pavetok.selement.pages.ResultPage"/>
-    <bean class="com.pavetok.selement.elements.ResultList"/>
 
 </beans>
