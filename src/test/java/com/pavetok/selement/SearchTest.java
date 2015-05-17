@@ -34,8 +34,8 @@ public class SearchTest {
     @Test
     public void searchShouldWork() throws Exception {
         // given
-        Result result1 = new Result("Selenide: лаконичные UI тесты на Java", "позволяет писать лаконичные тесты");
-        Result result2 = new Result("Selenide: concise UI tests in Java", "concise UI tests in Java");
+        Result result1 = new Result(1, "Selenide: лаконичные UI тесты на Java", "позволяет писать лаконичные тесты");
+        Result result2 = new Result(2, "Selenide: concise UI tests in Java", "concise UI tests in Java");
         // when
         user.opens(mainPage);
         // and

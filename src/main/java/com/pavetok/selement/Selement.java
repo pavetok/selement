@@ -18,6 +18,10 @@ abstract public class Selement {
         return $(this.locator());
     }
 
+    public SelenideElement self(int index) {
+        return $(this.locator(), index - 1);
+    }
+
     public void shouldBeVisible() throws InvocationTargetException, IllegalAccessException {
         this.visible();
         for (Selement child : children()) {
