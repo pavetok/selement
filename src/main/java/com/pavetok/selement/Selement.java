@@ -14,23 +14,23 @@ import static com.codeborne.selenide.Selenide.$;
 
 abstract public class Selement {
     public SelenideElement self() {
-        return $(this.locator());
+        return $(locator());
     }
 
     public SelenideElement self(int index) {
-        return $(this.locator(), index - 1);
+        return $(locator(), index - 1);
     }
 
-    public void shouldBeVisible() throws InvocationTargetException, IllegalAccessException {
-        this.visible();
+    public void shouldBeVisibleWithChildren() throws InvocationTargetException, IllegalAccessException {
+        this.shouldBeVisible();
         for (Selement child : children()) {
-            child.shouldBeVisible();
+            child.shouldBeVisibleWithChildren();
         }
     }
 
     protected abstract By locator();
 
-    protected void visible() {
+    protected void shouldBeVisible() {
         self().shouldBe(visible);
     }
 
@@ -47,5 +47,9 @@ abstract public class Selement {
         }
 
         return selements;
+    }
+
+    public void click() {
+        self().click();
     }
 }

@@ -25,7 +25,7 @@ public class Result extends Selement {
     }
 
     @Override
-    protected void visible() {
+    protected void shouldBeVisible() {
         self(position).shouldBe(visible);
         link().shouldBe(visible).shouldHave(exactText(linkText));
         description().shouldBe(visible).shouldHave(text(description));
@@ -37,5 +37,10 @@ public class Result extends Selement {
 
     private SelenideElement description() {
         return self(position).$(By.className("st"));
+    }
+
+    @Override
+    public void click() {
+        link().click();
     }
 }

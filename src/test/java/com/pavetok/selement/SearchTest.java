@@ -43,8 +43,12 @@ public class SearchTest {
         // then
         browser.opens(resultPage);
         // and
-        resultPage.resultList().shouldHaveSize(10);
+        resultPage.results().shouldHaveSize(10);
         // and
         user.shouldSee(result1, result2);
+        // when
+        user.clicks(resultPage.next());
+        // then
+        user.shouldSee(resultPage);
     }
 }

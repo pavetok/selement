@@ -3,12 +3,13 @@ package com.pavetok.selement.pages;
 import com.pavetok.selement.Selement;
 import org.openqa.selenium.By;
 
+import static com.codeborne.selenide.WebDriverRunner.url;
 import static org.hamcrest.CoreMatchers.containsString;
 import static org.hamcrest.MatcherAssert.assertThat;
 
-abstract public class BasePage extends Selement {
+abstract public class AbstractPage extends Selement {
 
-    protected abstract String url();
+    protected abstract String pageUrl();
 
     @Override
     protected By locator() {
@@ -16,7 +17,8 @@ abstract public class BasePage extends Selement {
     }
 
     @Override
-    protected void visible() {
-        assertThat(url(), containsString(this.url()));
+    protected void shouldBeVisible() {
+        super.shouldBeVisible();
+        assertThat(url(), containsString(pageUrl()));
     }
 }

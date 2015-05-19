@@ -1,11 +1,11 @@
 package com.pavetok.selement.actors;
 
-import com.pavetok.selement.pages.BasePage;
+import com.pavetok.selement.pages.AbstractPage;
 
 public class Browser {
-    public BasePage currentPage;
+    public AbstractPage currentPage;
 
-    public void opens(BasePage page) {
+    public void opens(AbstractPage page) {
         currentPage = page;
     }
 }
